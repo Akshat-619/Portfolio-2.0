@@ -1,0 +1,37 @@
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #0a0f1f;
+  color: #eaeaea;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e94560;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #ff5a76;
+}

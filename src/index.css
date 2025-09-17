@@ -1,13 +1,83 @@
+/* src/index.css - global reset + tighter section spacing */
+
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #0a0f1f;
+  color: #eaeaea;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Links */
+a { color: inherit; text-decoration: none; }
+
+/* Kill browser default margins for headings & paragraphs */
+h1, h2, h3, h4, h5, p, ul, ol {
+  margin: 0;
+  padding: 0;
 }
+
+/* Global section spacing (smaller) */
+section {
+  padding: 36px 20px; /* less space top & bottom */
+  margin: 0;
+}
+
+/* Additional tightening between consecutive sections */
+section + section {
+  padding-top: 28px; /* even less between successive sections */
+}
+
+/* Headings spacing controlled explicitly */
+h1 { margin-bottom: 12px; }
+h2 {
+  margin-top: 0;     /* important */
+  margin-bottom: 18px;
+  font-size: 2rem;
+}
+
+/* Hero should be prominent but not huge */
+.hero {
+  min-height: 70vh;         /* reduce from 90/100vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;       /* smaller */
+}
+
+/* Make sure Navbar is not pushing extra space */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 0;
+}
+
+/* Project grid and skill badges: smaller vertical gaps */
+.project-grid,
+.skill-list {
+  gap: 14px;               /* smaller gaps */
+}
+
+/* Cards: reduce internal padding if they are very tall */
+.project-card {
+  padding: 16px;           /* tighten cards */
+  border-radius: 12px;
+}
+
+/* If any component-specific CSS sets large margins on top of sections,
+   this rule forces headings inside sections to not create extra top space */
+section > h2:first-child,
+section > .section-heading {
+  margin-top: 0 !important;
+}
+
+/* utility small spacing */
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
